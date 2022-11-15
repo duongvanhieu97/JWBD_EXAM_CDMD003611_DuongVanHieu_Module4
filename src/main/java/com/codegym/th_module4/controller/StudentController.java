@@ -5,13 +5,10 @@ import com.codegym.th_module4.model.Student;
 import com.codegym.th_module4.service.Class.IClassService;
 import com.codegym.th_module4.service.student.IStudentService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
-import java.util.List;
 import java.util.Optional;
 
 @Controller
@@ -37,7 +34,7 @@ public class StudentController {
     @GetMapping("/showFormCreate")
     public ModelAndView showFormCreate() {
         ModelAndView modelAndView = new ModelAndView("/student/create");
-        modelAndView.addObject("students", new Student());
+        modelAndView.addObject("student", new Student());
         return modelAndView;
     }
     @PostMapping("/create")

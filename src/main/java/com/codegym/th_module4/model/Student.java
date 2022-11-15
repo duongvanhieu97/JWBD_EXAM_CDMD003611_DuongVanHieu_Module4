@@ -8,6 +8,7 @@ import lombok.Setter;
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import java.time.LocalDate;
+import java.util.Date;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -22,8 +23,8 @@ public class Student {
     @NotEmpty(message = "Vui lòng nhập giá trị")
     @Column(columnDefinition = "VARCHAR(255)")
     private String name;
-
-    private LocalDate birthday;
+// Chưa xử lý được lỗi để Date
+    private String birthday;
     @NotEmpty(message = "Vui lòng nhập giá trị")
     @Column(columnDefinition = "VARCHAR(255)")
     private String address;

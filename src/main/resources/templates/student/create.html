@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Create city</title>
+    <title>Create student</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
@@ -16,6 +16,7 @@
 <th:block th:if="${message}">
     <p th:text="${message}"></p>
 </th:block>
+
 <form th:action="@{/student/create}" th:object="${student}" method="post" style="margin-right: auto; margin-left: auto">
     <table style="margin-right: auto; margin-left: auto; text-align: left">
         <tr>
@@ -24,11 +25,12 @@
         </tr>
 
         <tr>
-            <td>Email Address:</td>
-            <td><input type="text" th:field="*{address}"/></td>
+            <td>Email :</td>
+            <td><input type="text" th:field="*{email}"/></td>
         </tr>
         <tr>
             <td>Date of Birthday:</td>
+
             <td><input type="date" th:field="*{birthday}"/></td>
         </tr>
         <tr>
