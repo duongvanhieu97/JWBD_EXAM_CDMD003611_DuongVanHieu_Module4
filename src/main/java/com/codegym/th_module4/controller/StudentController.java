@@ -29,7 +29,7 @@ public class StudentController {
         return classService.findAll();
     }
     @GetMapping("/list")
-    public ModelAndView listCity() {
+    public ModelAndView listStudent() {
         ModelAndView modelAndView = new ModelAndView("/student/list");
         modelAndView.addObject("students",studentService.findAll());
         return modelAndView;
@@ -41,7 +41,7 @@ public class StudentController {
         return modelAndView;
     }
     @PostMapping("/create")
-    public ModelAndView saveCity(@ModelAttribute("student") Student student) {
+    public ModelAndView saveStudent(@ModelAttribute("student") Student student) {
         studentService.save(student);
         ModelAndView modelAndView = new ModelAndView("/student/create");
         modelAndView.addObject("student", new Student());
@@ -60,7 +60,7 @@ public class StudentController {
         }
     }
     @PostMapping("/edit")
-    public ModelAndView updateCity(@ModelAttribute("student") Student student) {
+    public ModelAndView updateStudent(@ModelAttribute("student") Student student) {
         studentService.save(student);
         ModelAndView modelAndView = new ModelAndView("/student/edit");
         modelAndView.addObject("student", student);
@@ -80,7 +80,7 @@ public class StudentController {
         }
     }
     @PostMapping("/delete")
-    public String deleteCity(@ModelAttribute("student") Student student) {
+    public String deleteStudent(@ModelAttribute("student") Student student) {
         studentService.remove(student.getId());
         return "redirect:student";
     }
